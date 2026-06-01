@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://smbp5q0wjyt0"]
+
+[ext_resource type="Script" uid="uid://dmcgtwly508b7" path="res://Script's/menu.gd" id="1_wrlu4"]
+[ext_resource type="Texture2D" uid="uid://bmrsorb5i8wki" path="res://Assets Godot Runner/background.png" id="2_q5l0e"]
+[ext_resource type="FontFile" uid="uid://ban4wp6x1bdev" path="res://Assets Godot Runner/PressStart2P-Regular.ttf" id="3_62njd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4pmh"]
+texture = ExtResource("2_q5l0e")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5l0e"]
+bg_color = Color(0.36314717, 0.58630913, 0.265275, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhvfj"]
+bg_color = Color(0.30899444, 0.50607455, 0.25876865, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrlu4"]
+bg_color = Color(0.7844367, 0.13778219, 0.12541565, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oarfx"]
+bg_color = Color(0.5927291, 0.13544208, 0.07528552, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[node name="Menu" type="Control" unique_id=622538831]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrlu4")
+
+[node name="Found" type="Panel" parent="." unique_id=643350745]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d4pmh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=377270988]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -212.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("3_62njd")
+theme_override_font_sizes/font_size = 136
+text = "Runner"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=748272880]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 343.0
+offset_top = -10.0
+offset_right = -344.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 54
+
+[node name="Enter" type="Button" parent="VBoxContainer" unique_id=1486460482]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_62njd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5l0e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xhvfj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xhvfj")
+text = "Jogar"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=686896427]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_62njd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wrlu4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oarfx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oarfx")
+text = "Sair"
+
+[connection signal="pressed" from="VBoxContainer/Enter" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

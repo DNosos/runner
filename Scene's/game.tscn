@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bg20xbkvvxv2k"]
+
+[ext_resource type="Texture2D" uid="uid://bmrsorb5i8wki" path="res://Assets Godot Runner/background.png" id="1_yt8py"]
+
+[node name="Game" type="Node2D" unique_id=892563704]
+
+[node name="Found-1" type="Sprite2D" parent="." unique_id=2062433855]
+texture = ExtResource("1_yt8py")
+
+[node name="Found-2" type="Sprite2D" parent="." unique_id=1552183752]
+
+[node name="Floor-1" type="Sprite2D" parent="." unique_id=1855277850]
+
+[node name="Floor-2" type="Sprite2D" parent="." unique_id=2044524140]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1245377435]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=169712842]
