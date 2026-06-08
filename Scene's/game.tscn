@@ -1,18 +1,167 @@
 [gd_scene format=3 uid="uid://bg20xbkvvxv2k"]
 
+[ext_resource type="Script" uid="uid://dmsqolfh0cawu" path="res://Script's/game.gd" id="1_u2lq2"]
 [ext_resource type="Texture2D" uid="uid://bmrsorb5i8wki" path="res://Assets Godot Runner/background.png" id="1_yt8py"]
+[ext_resource type="Texture2D" uid="uid://blb2pq5xdr2ga" path="res://Assets Godot Runner/middleground2.png" id="3_i4s2q"]
+[ext_resource type="Texture2D" uid="uid://bcnyxsvgxrn8f" path="res://Assets Godot Runner/foreground.png" id="3_rfj2i"]
+[ext_resource type="Texture2D" uid="uid://bg4w3oiphpyhq" path="res://Assets Godot Runner/middleground1.png" id="4_5441b"]
+[ext_resource type="Texture2D" uid="uid://bjpcr3727y8kf" path="res://Assets Godot Runner/player.png" id="6_5441b"]
+[ext_resource type="Script" uid="uid://bb62dq7hvu3d5" path="res://Script's/player.gd" id="6_mudu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4s2q"]
+size = Vector2(1152, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mudu5"]
+atlas = ExtResource("6_5441b")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3sjo"]
+atlas = ExtResource("6_5441b")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1fri"]
+atlas = ExtResource("6_5441b")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oekie"]
+atlas = ExtResource("6_5441b")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm1jq"]
+atlas = ExtResource("6_5441b")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpop0"]
+atlas = ExtResource("6_5441b")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g7uh"]
+atlas = ExtResource("6_5441b")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpns0"]
+atlas = ExtResource("6_5441b")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl4co"]
+atlas = ExtResource("6_5441b")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1v5o6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mudu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3sjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1fri")
+}],
+"loop": true,
+"name": &"defalt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oekie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm1jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpop0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g7uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpns0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl4co")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mudu5"]
+size = Vector2(64.6875, 84)
 
 [node name="Game" type="Node2D" unique_id=892563704]
+script = ExtResource("1_u2lq2")
 
 [node name="Found-1" type="Sprite2D" parent="." unique_id=2062433855]
+scale = Vector2(3.6, 3.6)
 texture = ExtResource("1_yt8py")
+centered = false
 
-[node name="Found-2" type="Sprite2D" parent="." unique_id=1552183752]
+[node name="Found-2" type="Sprite2D" parent="." unique_id=29315132]
+position = Vector2(1152.0002, 0)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("1_yt8py")
+centered = false
+
+[node name="Mid-Blue-1" type="Sprite2D" parent="." unique_id=1930943108]
+scale = Vector2(3.6000004, 3.5944445)
+texture = ExtResource("3_i4s2q")
+centered = false
+
+[node name="Mid-Blue-2" type="Sprite2D" parent="." unique_id=170042657]
+position = Vector2(1152.0002, 0)
+scale = Vector2(3.6000004, 3.5944445)
+texture = ExtResource("3_i4s2q")
+centered = false
+
+[node name="Mid-Black-1" type="Sprite2D" parent="." unique_id=1761310166]
+position = Vector2(0, -1)
+scale = Vector2(3.59375, 3.5944445)
+texture = ExtResource("4_5441b")
+centered = false
+
+[node name="Mid-Black-2" type="Sprite2D" parent="." unique_id=1497003846]
+position = Vector2(1152.0001, -0.9999999)
+scale = Vector2(3.59375, 3.5944445)
+texture = ExtResource("4_5441b")
+centered = false
 
 [node name="Floor-1" type="Sprite2D" parent="." unique_id=1855277850]
+position = Vector2(-0.99999994, 535)
+scale = Vector2(3.6062496, 2.3906252)
+texture = ExtResource("3_rfj2i")
+centered = false
 
-[node name="Floor-2" type="Sprite2D" parent="." unique_id=2044524140]
+[node name="Floor-2" type="Sprite2D" parent="." unique_id=887413660]
+position = Vector2(1151, 535)
+scale = Vector2(3.6062498, 2.3906248)
+texture = ExtResource("3_rfj2i")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1245377435]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=169712842]
+position = Vector2(576, 610)
+shape = SubResource("RectangleShape2D_i4s2q")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1522667018]
+position = Vector2(1152.0002, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=453161423]
+position = Vector2(576, 610)
+shape = SubResource("RectangleShape2D_i4s2q")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1071326798]
+position = Vector2(1728.0002, 610)
+script = ExtResource("6_mudu5")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Player" unique_id=1118765138]
+position = Vector2(-1671.0002, -66)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_1v5o6")
+animation = &"defalt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=558812264]
+position = Vector2(-1671.344, -80)
+shape = SubResource("RectangleShape2D_mudu5")
