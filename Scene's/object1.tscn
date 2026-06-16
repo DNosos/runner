@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bxqnddic6xnt0"]
+
+[ext_resource type="Script" uid="uid://bhm6mi6md7r22" path="res://Script's/spike.gd" id="1_rsykj"]
+[ext_resource type="Texture2D" uid="uid://c8htny6n0xuen" path="res://Assets Godot Runner/thorn.png" id="2_xht75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ln6"]
+size = Vector2(45.5, 12)
+
+[node name="object" type="Area2D" unique_id=338762917]
+script = ExtResource("1_rsykj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=725238435]
+scale = Vector2(3, 3)
+texture = ExtResource("2_xht75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801816589]
+position = Vector2(-1.75, 18)
+shape = SubResource("RectangleShape2D_80ln6")

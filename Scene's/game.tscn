@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bg4w3oiphpyhq" path="res://Assets Godot Runner/middleground1.png" id="4_5441b"]
 [ext_resource type="Texture2D" uid="uid://bjpcr3727y8kf" path="res://Assets Godot Runner/player.png" id="6_5441b"]
 [ext_resource type="Script" uid="uid://bb62dq7hvu3d5" path="res://Script's/player.gd" id="6_mudu5"]
+[ext_resource type="Script" uid="uid://dbr0oiwlws7js" path="res://Script's/gerador.gd" id="9_oekie"]
+[ext_resource type="Script" uid="uid://b3hn78sgfand8" path="res://Script's/generator.gd" id="9_u1fri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4s2q"]
 size = Vector2(1152, 76)
@@ -165,3 +167,24 @@ animation = &"defalt"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=558812264]
 position = Vector2(-1671.344, -80)
 shape = SubResource("RectangleShape2D_mudu5")
+
+[node name="Generator" type="Node2D" parent="." unique_id=1854385642]
+position = Vector2(950, 488)
+scale = Vector2(3.6, 3.6)
+script = ExtResource("9_u1fri")
+
+[node name="Gerador" type="Node2D" parent="." unique_id=1073152498]
+script = ExtResource("9_oekie")
+
+[node name="\'-\'" type="HBoxContainer" parent="." unique_id=253716178]
+offset_right = 1155.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Vidas" type="Label" parent="\'-\'" unique_id=1792116167]
+layout_mode = 2
+text = "Vidas: 5"
+
+[node name="Pontos" type="Label" parent="\'-\'" unique_id=868247569]
+layout_mode = 2
+text = "Pontos: 0"

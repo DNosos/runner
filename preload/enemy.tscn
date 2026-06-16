@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://djlfy33ss378e"]
+
+[ext_resource type="Script" uid="uid://uec4tq8b8pht" path="res://Script's/enemy.gd" id="1_5rayo"]
+[ext_resource type="Texture2D" uid="uid://g6yxih81xqag" path="res://Assets Godot Runner/enemies.png" id="1_tkxmj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rayo"]
+atlas = ExtResource("1_tkxmj")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tmal"]
+atlas = ExtResource("1_tkxmj")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lrd5"]
+atlas = ExtResource("1_tkxmj")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaj18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rayo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tmal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lrd5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ooj"]
+size = Vector2(52, 34)
+
+[node name="enemy" type="Area2D" unique_id=1982799830]
+script = ExtResource("1_5rayo")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1310428407]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vaj18")
+frame = 2
+frame_progress = 0.2556724
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879984141]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_a8ooj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

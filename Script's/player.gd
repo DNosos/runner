@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+var vidas = 5
+var pontos = 0
+
 var velocidade_pulo = -600
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity()*delta
@@ -11,3 +14,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		$Sprite.play("jump")
 	move_and_slide()
+	
+	if vidas <= 0:
+		get_tree().reload_current_scene()
